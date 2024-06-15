@@ -17,4 +17,4 @@ def generate_board(board):
     print('   A B C D E F G H')
     print('   ---------------')
 
-generate_board(PLAYER_BOARD)
+generate_board(CPU_BOARD)
