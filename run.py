@@ -116,8 +116,13 @@ def count_hits(board):
     # Show count
     return count
 
+# Welcome message for users
+print("Welcome to Battleships\n")
+# Instructions for starting the game
+print("Select a row then a column to try and hit the battleships\n")
 
-place_cpu_battleships(CPU_BOARD)
-generate_board(CPU_BOARD)
-generate_board(PLAYER_BOARD)
-choose_coordinates()
+# Declare turns, set to 10
+turns = 10
+# Run the game while turns are greater than 0
+while turns > 0:
+    generate_board(PLAYER_BOARD)
