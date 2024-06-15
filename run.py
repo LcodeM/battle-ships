@@ -19,8 +19,8 @@ def generate_board(board):
     """
     # 3 spaces to '-' and letters to format spacing
     # Reference: Knowledge Mavens Youtube
-    print('   A B C D E F G H')
-    print('   ---------------')
+    print('  A B C D E F G H')
+    print('  ---------------')
     row_number = 1
     # For each row, create board contents
     for row in board:
