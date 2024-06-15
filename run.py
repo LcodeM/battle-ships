@@ -1,3 +1,4 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Board for cpu ships to be placed, using list of empty spaces
+CPU_BOARD = [[' '] * 8 for x in range(8)]
+# Board for user guesses to be placed, using list of empty spaces
+PLAYER_BOARD = [[' '] * 8 for x in range(8)]
