@@ -39,12 +39,12 @@ def place_cpu_battleships(board):
     for ship in range(5):
         # Generate random integer with row and column pair (1, 1 = A1 etc.)
         ship_row, ship_column = randint(0, 7), randint(0, 7)
-        # If the chosen numbers are equal to X on the board,
+        # If the chosen numbers are equal to O on the board,
         # generate again
-        while board[ship_row][ship_column] == 'X':
+        while board[ship_row][ship_column] == 'O':
             ship_row, ship_column = randint(0, 7), randint(0, 7)
-        # If empty, assign 'X'
-        board[ship_row][ship_column] = 'X'
+        # If empty, assign 'O'
+        board[ship_row][ship_column] = 'O'
 
 
 def choose_row():
@@ -109,8 +109,8 @@ def count_hits(board):
     for row in board:
         # Include column guess in check
         for column in row:
-            # Check if selected column in row contains 'X'
-            if column == 'X':
+            # Check if selected column in row contains 'O'
+            if column == 'O':
                 # If true, increment count by 1
                 count =+ 1
     # Show count
@@ -120,6 +120,9 @@ def count_hits(board):
 print("Welcome to Battleships\n")
 # Instructions for starting the game
 print("Select a row then a column to try and hit the battleships\n")
+
+place_cpu_battleships(CPU_BOARD)
+generate_board(CPU_BOARD)
 
 # Declare turns, set to 10
 turns = 10
@@ -132,7 +135,7 @@ while turns > 0:
     # If players already chosen coordinates print message
     if PLAYER_BOARD[row][column] == '-':
         print("Already guessed those coordinates")
-    # Otherwise, if CPU board coords are X, print hit message
+    # Otherwise, if CPU board coords are O, print hit message
     elif CPU_BOARD[row][column] == 'O':
         print("That's a HIT!")
         # Update player board with X for hit.
@@ -141,3 +144,4 @@ while turns > 0:
         print("Sorry, you missed...")
         PLAYER_BOARD[row][column] = '-'
         turns -= 1
+
