@@ -87,6 +87,7 @@ def choose_column():
     # Return column
     return column
 
+
 def choose_coordinates():
     """
     Show choice by calling row & column functions (above)
@@ -98,5 +99,24 @@ def choose_coordinates():
     return row, y_axis_converter[column]
 
 
+def count_hits(board):
+    """
+    Function to increment hit battleships when guess is correct
+    """
+    # Beging count on 0
+    count = 0
+    # for loop for CPU board
+    for row in board:
+        # Include column guess in check
+        for column in row:
+            # Check if selected column in row contains 'X'
+            if column == 'X':
+                # If true, increment count by 1
+                count =+ 1
+    # Show count
+    return count
+
+
+place_cpu_battleships(CPU_BOARD)
+generate_board(CPU_BOARD)
 generate_board(PLAYER_BOARD)
-choose_coordinates()
