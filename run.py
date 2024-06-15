@@ -16,5 +16,12 @@ def generate_board(board):
     # 3 spaces to '-' and letters to format spacing
     print('   A B C D E F G H')
     print('   ---------------')
+    row_number = 1
+    # For each row, create board contents
+    for row in board:
+        # Print "|" either side of columns for division
+        print(f"{row_number}|{'|'.join(row)}|")
+        # Increment row number by 1 for length of rows list (8)
+        row_number += 1
 
 generate_board(CPU_BOARD)
