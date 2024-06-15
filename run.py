@@ -122,7 +122,7 @@ print("Welcome to Battleships\n")
 print("Select a row then a column to try and hit the battleships\n")
 
 place_cpu_battleships(CPU_BOARD)
-generate_board(CPU_BOARD)
+# generate_board(CPU_BOARD) ** UNCOMMENT TO SEE SHIP LOCATIONS **
 
 # Declare turns, set to 10
 turns = 10
@@ -140,8 +140,21 @@ while turns > 0:
         print("That's a HIT!")
         # Update player board with X for hit.
         PLAYER_BOARD[row][column] = 'X'
+    # If user misses
     else:
         print("Sorry, you missed...")
+        # Mark player board with a miss marker
         PLAYER_BOARD[row][column] = '-'
+        # Reduce number of turns by 1
         turns -= 1
-
+    # If all ships hit (=5)
+    if count_hits(PLAYER_BOARD) == 5:
+        # Print congratualtions message
+        print("CONGRATULATIONS! You sunk all battleships.")
+        # End the game
+        break
+    # Display remaining turns after each guess.
+    print(f"You have {turns} turns remaining.")
+# If no more turns left, end game
+if turns == 0:
+    print("Game over... You ran out of turns.")
