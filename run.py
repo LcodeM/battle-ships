@@ -91,12 +91,12 @@ def choose_coordinates():
     """
     Show choice by calling row & column functions (above)
     """
-    # Define row and column
+    # Define row and column and pass functions above
     row = choose_row()
     column = choose_column()
-    # Return both values, converty column letter to an integer
+    # Return both values, convert column letter to an integer
     return row, y_axis_converter[column]
 
 
-choose_coordinates()
 generate_board(PLAYER_BOARD)
+choose_coordinates()
