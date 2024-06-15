@@ -14,14 +14,19 @@ def generate_board(board):
     Include row/column number and letter and separate rows
     """
     # 3 spaces to '-' and letters to format spacing
+    # Reference: Knowledge Mavens Youtube
     print('   A B C D E F G H')
     print('   ---------------')
     row_number = 1
     # For each row, create board contents
     for row in board:
         # Print "|" either side of columns for division
+        # Reference: Knowledge Mavens Youtube & Phind.com
         print(f"{row_number}|{'|'.join(row)}|")
         # Increment row number by 1 for length of rows list (8)
         row_number += 1
 
-generate_board(CPU_BOARD)
+def place_cpu_battleships():
+    """
+    Place battleships in cpu board
+    """
