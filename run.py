@@ -126,3 +126,4 @@ turns = 10
 # Run the game while turns are greater than 0
 while turns > 0:
     generate_board(PLAYER_BOARD)
+    row, column = choose_coordinates()
