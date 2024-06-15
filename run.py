@@ -42,7 +42,7 @@ def place_cpu_battleships(board):
         # If the chosen numbers are equal to X on the board,
         # generate again
         while board[ship_row][ship_column] == 'X':
-            ship_row, ship_column = randint(0, 7)
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
         # If empty, assign 'X'
         board[ship_row][ship_column] = 'X'
 
@@ -120,3 +120,4 @@ def count_hits(board):
 place_cpu_battleships(CPU_BOARD)
 generate_board(CPU_BOARD)
 generate_board(PLAYER_BOARD)
+choose_coordinates()
