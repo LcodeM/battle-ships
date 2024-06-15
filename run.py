@@ -125,5 +125,19 @@ print("Select a row then a column to try and hit the battleships\n")
 turns = 10
 # Run the game while turns are greater than 0
 while turns > 0:
+    # Show players board (only) while turns > 0
     generate_board(PLAYER_BOARD)
+    # Get player inputs
     row, column = choose_coordinates()
+    # If players already chosen coordinates print message
+    if PLAYER_BOARD[row][column] == '-':
+        print("Already guessed those coordinates")
+    # Otherwise, if CPU board coords are X, print hit message
+    elif CPU_BOARD[row][column] == 'O':
+        print("That's a HIT!")
+        # Update player board with X for hit.
+        PLAYER_BOARD[row][column] = 'X'
+    else:
+        print("Sorry, you missed...")
+        PLAYER_BOARD[row][column] = '-'
+        turns -= 1
