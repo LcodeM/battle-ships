@@ -29,7 +29,7 @@ def generate_board(board):
         # Increment row number by 1 for length of rows list (8)
         row_number += 1
 
-def place_cpu_battleships():
+def place_cpu_battleships(board):
     """
     Place battleships in cpu board (x5) at random
     """
@@ -39,3 +39,6 @@ def place_cpu_battleships():
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = randint(0, 7)
         board[ship_row][ship_column] = 'X'
+
+place_cpu_battleships(CPU_BOARD)
+generate_board(CPU_BOARD)
