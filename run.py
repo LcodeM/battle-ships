@@ -1,3 +1,6 @@
+# Ref: ioflood.com blog
+from random import randint
+
 # Board for cpu ships to be placed, using list of empty spaces
 CPU_BOARD = [[' '] * 8 for x in range(8)]
 # Board for user guesses to be placed, using list of empty spaces
@@ -31,3 +34,8 @@ def place_cpu_battleships():
     Place battleships in cpu board (x5) at random
     """
     for ship in range(5):
+        # Generate random integer with row and column pair (1, 1 = A1 etc.)
+        ship_row, ship_column = randint(0, 7), randint(0, 7)
+        while board[ship_row][ship_column] == 'X':
+            ship_row, ship_column = randint(0, 7)
+        board[ship_row][ship_column] = 'X'
