@@ -28,5 +28,6 @@ def generate_board(board):
 
 def place_cpu_battleships():
     """
-    Place battleships in cpu board
+    Place battleships in cpu board (x5) at random
     """
+    for ship in range(5):
