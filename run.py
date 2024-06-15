@@ -59,6 +59,7 @@ def choose_row():
             if row not in '1234567':
                 # If input not valid, return error and run again
                 raise ValueError("Invalid row")
+            # Re-run until valid
             break
         # Report error to user in terminal
         except ValueError as e:
@@ -71,13 +72,31 @@ def choose_column():
     """
     User input for ship column location
     """
-    try:
-        row = input('Please enter a row 1-8\n')
-        if row not in '1234567':
-            # If input not valid, return error and run again
-            raise ValueError("Invalid row")
-    # Report error to user in terminal
-    except ValueError as e:
-        print(f"Error: {e}\n Please enter a valid row")
+    # While loop to run through inputs until valid
+    while True:
+        try:
+            column = input('Please enter a column A-H\n')
+            if column not in 'ABCDEFGH':
+                # If input not valid, return error and run again
+                raise ValueError("Invalid column")
+            # Re-run until valid
+            break
+        # Report error to user in terminal
+        except ValueError as e:
+            print(f"Error: {e}\n Please enter a valid column")
+    # Return column
+    return column
 
+def choose_coordinates():
+    """
+    Show choice by calling row & column functions (above)
+    """
+    # Define row and column
+    row = choose_row()
+    column = choose_column()
+    # Return both values, converty column letter to an integer
+    return row, y_axis_converter[column]
+
+
+choose_coordinates()
 generate_board(PLAYER_BOARD)
