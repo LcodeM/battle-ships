@@ -118,7 +118,7 @@ def count_hits(board):
 
 
 # Welcome message for users
-print("Welcome to Battleships\n")
+print("\033[1;32;40mWelcome to Battleships\n")
 # Instructions for starting the game
 print("Select a row then a column to try and hit the battleships\n")
 
