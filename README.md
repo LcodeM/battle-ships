@@ -42,12 +42,22 @@ Upon page load:
 
 #### CPU board
 
+![CPU Board]()
+
 #### Player input
+
+![Player input]()
 
 #### User Feedback messages
 
+![Already guessed]()
+![Hit]()
+![Miss]()
+![Error]()
+
 #### End Game messages
 
+![Game over]()
 
 ### Future Features and Improvements to be Implemented
 
