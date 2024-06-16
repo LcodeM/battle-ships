@@ -56,7 +56,8 @@ def choose_row():
         # Look for integer input between 1 and 8
         try:
             row = input('Please enter a row 1-8\n')
-            if row not in '12345678':
+            # Bug fixed: added 'or row == ""' to stop empty input
+            if row not in '12345678' or row == "":
                 # If input not valid, return error and run again
                 raise ValueError("Invalid row")
             # Re-run until valid
@@ -76,7 +77,8 @@ def choose_column():
     while True:
         try:
             column = input('Please enter a column A-H\n').upper()
-            if column not in 'ABCDEFGH':
+            # Bug fixed: added 'or column == "" to stop empty input
+            if column not in 'ABCDEFGH' or column == "":
                 # If input not valid, return error and run again
                 raise ValueError("Invalid column")
             # Re-run until valid
