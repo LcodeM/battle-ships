@@ -1,11 +1,6 @@
 # Ref: ioflood.com blog
 from random import randint
 
-# Board for cpu ships to be placed, using list of empty spaces
-CPU_BOARD = [[' '] * 8 for x in range(8)]
-# Board for user guesses to be placed, using list of empty spaces
-PLAYER_BOARD = [[' '] * 8 for x in range(8)]
-
 # Convert letters to numbers for user input using dictionary:
 # (0, 0) input would be A1 on board axis
 # Ref CI LMS dictionary comprehensions
@@ -119,51 +114,83 @@ def count_hits(board):
     return count
 
 
-# Welcome message for users
-print("\033[1;32;40mWelcome to Battleships\n")
-# Instructions for starting the game
-print("Select a row then a column to try and hit the battleships\n")
-
-place_cpu_battleships(CPU_BOARD)
-# generate_board(CPU_BOARD) ** UNCOMMENT TO SEE SHIP LOCATIONS **
-
-
-# Declare turns, set to 10
-turns = 10
-# Run the game while turns are greater than 0
-while turns > 0:
+def play_game():
     """
-    While loop that runs through player guess outcomes
-    to determine hit/miss/already guessed coordinates.
-    End of game hits = 5 (WIN) OR turns = 0 (LOSE)
+    Function to start the game.
+    Initialises placement of battleships and generates
+    the user board.
     """
-    # Show players board (only) while turns > 0
-    generate_board(PLAYER_BOARD)
-    # Get player inputs
-    row, column = choose_coordinates()
-    # If players already chosen coordinates print message
-    if PLAYER_BOARD[row][column] == '-':
-        print("Already guessed those coordinates")
-    # Otherwise, if CPU board coords are O, print hit message
-    elif CPU_BOARD[row][column] == 'O':
-        print("That's a HIT!")
-        # Update player board with X for hit.
-        PLAYER_BOARD[row][column] = 'X'
-    # If user misses
-    else:
-        print("Sorry, you missed...")
-        # Mark player board with a miss marker
-        PLAYER_BOARD[row][column] = '-'
-        # Reduce number of turns by 1
-        turns -= 1
-    # If all ships hit (=5)
-    if count_hits(PLAYER_BOARD) == 5:
-        # Print congratualtions message
-        print("CONGRATULATIONS! You sunk all battleships.")
-        # End the game
+    # Board for cpu ships to be placed, using list of empty spaces
+    CPU_BOARD = [[' '] * 8 for x in range(8)]
+    # Board for user guesses to be placed, using list of empty spaces
+    PLAYER_BOARD = [[' '] * 8 for x in range(8)]
+
+    place_cpu_battleships(CPU_BOARD)
+    # generate_board(CPU_BOARD) ** UNCOMMENT TO SEE SHIP LOCATIONS **
+
+    # Welcome message for users
+    print("\033[1;32;40mWelcome to Battleships\n")
+    # Instructions for starting the game
+    print("INSTRUCTIONS:\n")
+    print("Select a row then a column to try and hit the battleships\n")
+    print("There are 5 battleships to sink in total, good luck!\n")
+
+    # Declare turns, set to 10
+    turns = 10
+    # Run the game while turns are greater than 0
+    while turns > 0:
+        """
+        While loop that runs through player guess outcomes
+        to determine hit/miss/already guessed coordinates.
+        End of game hits = 5 (WIN) OR turns = 0 (LOSE)
+        """
+        # Show players board (only) while turns > 0
+        generate_board(PLAYER_BOARD)
+        # Get player inputs
+        row, column = choose_coordinates()
+        # If players already chosen coordinates print message
+        if PLAYER_BOARD[row][column] == '-':
+            print("Already guessed those coordinates")
+        # Otherwise, if CPU board coords are O, print hit message
+        elif CPU_BOARD[row][column] == 'O':
+            print("That's a HIT!")
+            # Update player board with X for hit.
+            PLAYER_BOARD[row][column] = 'X'
+        # If user misses
+        else:
+            print("Sorry, you missed...")
+            # Mark player board with a miss marker
+            PLAYER_BOARD[row][column] = '-'
+            # Reduce number of turns by 1
+            turns -= 1
+        # If all ships hit (=5)
+        if count_hits(PLAYER_BOARD) == 5:
+            # Print congratualtions message
+            print("CONGRATULATIONS! You sunk all battleships.")
+            # End the game
+            break
+        # Display remaining turns after each guess.
+        print(f"You have {turns} turns remaining.\n")
+    # If no more turns left, end game
+    if turns == 0:
+        print("Game over... You ran out of turns.")
+
+
+def restart_game():
+    try:
+        restart = input("Enter y to play again or n to quit: ")
+        if restart == "y":
+            return True
+        elif restart == "n":
+            return False
+        raise ValueError
+    except ValueError:
+        print("Please enter y or n")
+        return True
+
+
+while True:
+    print("Playing game...")
+    play_game()
+    if not restart_game():
         break
-    # Display remaining turns after each guess.
-    print(f"You have {turns} turns remaining.\n")
-# If no more turns left, end game
-if turns == 0:
-    print("Game over... You ran out of turns.")
