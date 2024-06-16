@@ -75,7 +75,7 @@ def choose_column():
     # While loop to run through inputs until valid
     while True:
         try:
-            column = input('Please enter a column A-H\n')
+            column = input('Please enter a column A-H\n').upper()
             if column not in 'ABCDEFGH':
                 # If input not valid, return error and run again
                 raise ValueError("Invalid column")
@@ -116,6 +116,7 @@ def count_hits(board):
     # Show count
     return count
 
+
 # Welcome message for users
 print("Welcome to Battleships\n")
 # Instructions for starting the game
@@ -124,10 +125,16 @@ print("Select a row then a column to try and hit the battleships\n")
 place_cpu_battleships(CPU_BOARD)
 # generate_board(CPU_BOARD) ** UNCOMMENT TO SEE SHIP LOCATIONS **
 
+
 # Declare turns, set to 10
 turns = 10
 # Run the game while turns are greater than 0
 while turns > 0:
+    """
+    While loop that runs through player guess outcomes
+    to determine hit/miss/already guessed coordinates.
+    End of game hits = 5 (WIN) OR turns = 0 (LOSE)
+    """
     # Show players board (only) while turns > 0
     generate_board(PLAYER_BOARD)
     # Get player inputs
@@ -154,7 +161,7 @@ while turns > 0:
         # End the game
         break
     # Display remaining turns after each guess.
-    print(f"You have {turns} turns remaining.")
+    print(f"You have {turns} turns remaining.\n")
 # If no more turns left, end game
 if turns == 0:
     print("Game over... You ran out of turns.")
