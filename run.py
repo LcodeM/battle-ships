@@ -132,7 +132,8 @@ def play_game():
     print("\033[1;32;40mWelcome to Battleships\n")
     # Instructions for starting the game
     print("INSTRUCTIONS:\n")
-    print("Select a row then a column to try and hit the battleships\n")
+    print("Select a row then a column to try and hit the battleships.\n")
+    print("'X' identifies a HIT and '-' identifies a miss.\n")
     print("There are 5 battleships to sink in total, good luck!\n")
 
     # Declare turns, set to 10
