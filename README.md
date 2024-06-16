@@ -13,19 +13,40 @@ Upon page load:
 - Read the welcome message and instructions.
 - Input a value for row between 1 and 8.
 - Input a value for column between A and H.
+- Repeat until:
+    - All 5 battleships hit
+    - Out of lives
+- Once game over, press y to restart or n to quit.
 
 ## User Stories
 
 ### First Time User Goals
 
-
+- As a first time user, I want to immediately be able to understand the purpose of the game, and how to play.
+- As a first time user, I want the game to be visually appealing and easy to see.
+- As a first time user, I want the game to be easy to play with minimum input
+- As a first time user, I want to be updated with my progress through the game.
+- As a first time user, I want to have the option to replay the game once it is over.
 
 ## Features
 
 ### Existing Features
 
-#### 
+#### Welcome message and instructions
 
+![Welcome]()
+
+#### Player board
+
+![Player Board]()
+
+#### CPU board
+
+#### Player input
+
+#### User Feedback messages
+
+#### End Game messages
 
 
 ### Future Features and Improvements to be Implemented
