@@ -58,16 +58,32 @@ The CPU board is hidden, as to provide the challenge of not knowing where the ba
 
 ![Player input](https://github.com/LcodeM/battle-ships/blob/main/documentation/user_input.png)
 
+One game start, and after each previous guess while the user still has turns, or there are battleships remaining, the user is prompted to input first a row, then a column input between 1 and 8 and A and H, respectively. Failure to do so will lead to a ValueError and error message being printed. User is then prompted to input a correct value.
+
 #### User Feedback messages
 
 ![Already guessed](https://github.com/LcodeM/battle-ships/blob/main/documentation/already_guessed_message.png)
+The already guessed user feedback message let's the user know they have already guessed those coordinates, which are marked with a '-' on the board, as per the instructions at the beginning of the game. 
+
 ![Hit](https://github.com/LcodeM/battle-ships/blob/main/documentation/hit_message.png)
+The hit message let's the user know their guess was correct, and they successfully sank a battleship. The board is then marked with an 'X'.
+
 ![Miss](https://github.com/LcodeM/battle-ships/blob/main/documentation/miss_message.png)
+The miss message let's the user know their guess was incorrect, and they failed to hit a battelship. One turn is deducted, and the board is marked with a '-'.
+
 ![Error](https://github.com/LcodeM/battle-ships/blob/main/documentation/error_message.png)
+Upon entering an incorrect value to the input for row or column, the user is given an Error message to indicate which value they need to input. Failure to do so will lead to a repeat of the error message.
 
 #### End Game messages
 
 ![Game over](https://github.com/LcodeM/battle-ships/blob/main/documentation/game_over_message.png)
+If the user runs out of turns, the game is over and game over message printed. 
+
+![Win]()
+If the user hits all ships, win message is shown.
+
+In both instances, the restart_game function will then prompt the user to play again or quit.
+
 
 ### Future Features and Improvements to be Implemented
 
