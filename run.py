@@ -102,14 +102,14 @@ def count_hits(board):
     """
     # Beging count on 0
     count = 0
-    # for loop for CPU board
+    # for loop for player board
     for row in board:
         # Include column guess in check
         for column in row:
             # Check if selected column in row contains 'O'
-            if column == 'O':
+            if column == 'X':
                 # If true, increment count by 1
-                count =+ 1
+                count += 1
     # Show count
     return count
 
@@ -139,13 +139,12 @@ def play_game():
     # Declare turns, set to 10
     turns = 10
     # Run the game while turns are greater than 0
-    while turns > 0 or count_hits(PLAYER_BOARD) == 5:
+    while turns > 0:
         """
         While loop that runs through player guess outcomes
         to determine hit/miss/already guessed coordinates.
-        End of game hits = 5 (WIN) OR turns = 0 (LOSE)
         """
-        # Show players board (only) while turns > 0
+        # Display board
         generate_board(CPU_BOARD)
         generate_board(PLAYER_BOARD)
         # Get player inputs
@@ -159,24 +158,25 @@ def play_game():
             # Update player board with X for hit.
             PLAYER_BOARD[row][column] = 'X'
         # If user misses
+        # Inside the main game loop
         else:
             print("Sorry, you missed...")
             # Mark player board with a miss marker
             PLAYER_BOARD[row][column] = '-'
             # Reduce number of turns by 1
             turns -= 1
-        # If all ships hit (=5)
-            #Bug: win message not working when count=5
-        
-
-        # Display remaining turns after each guess.
-        print(f"You have {turns} turns remaining.\n")
+    if count_hits(PLAYER_BOARD) == 5:
+        # Print congratulations message
+        print("CONGRATULATIONS! You sunk all battleships.")
+        # End the game
+        return
+    # Display remaining turns after each guess.
+    print(f"You have {turns} turns remaining.\n")
+    # Check if all ships have been hit after each turn
     # If no more turns left, end game
     if turns == 0:
         print("Game over... You ran out of turns.")
-    elif count_hits(PLAYER_BOARD) == 5:
-            # Print congratulations message
-            print("CONGRATULATIONS You sunk all battleships.")
+        return
 
 
 def restart_game():
