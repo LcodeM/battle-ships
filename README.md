@@ -97,7 +97,7 @@ If I had more time, some future features that would be a good addition to the ga
 
 ## Flowchart
 
-![Flowchart]()
+![Flowchart](https://github.com/LcodeM/battle-ships/blob/main/documentation/flowchart_logic.png)
 The flowchart represents the logic of the application, and the steps taken in each instance when an input is prompted and/or made.
 
 ## Technologies

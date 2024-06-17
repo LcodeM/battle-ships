@@ -145,7 +145,6 @@ def play_game():
         to determine hit/miss/already guessed coordinates.
         """
         # Display board
-        generate_board(CPU_BOARD)
         generate_board(PLAYER_BOARD)
         # Get player inputs
         row, column = choose_coordinates()
