@@ -182,20 +182,35 @@ def play_game():
 
 
 def restart_game():
+    """
+    Restart game function to call when turns = 0 or hits = 5
+    Prompt input of Y for play again
+    Prompt input N for quit game
+    """
     try:
+        # If restart input is Y then play again. Make uppercase
         restart = input("Enter y to play again or n to quit: ").upper()
         if restart == "Y":
             return True
+        # Otherwise N to quit game
         elif restart == "N":
             return False
         raise ValueError
+    # Show value error with incorrect input
     except ValueError:
         print("Please enter Y or N")
         return True
 
 
+"""
+While loop to start game and continue until restart_game
+is called by hits = 5 or turns = 0
+"""
 while True:
+    # Print message to user that game is running
     print("Playing game...")
+    # Run game
     play_game()
+    # Otherwise, call restart game
     if not restart_game():
         break
