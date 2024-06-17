@@ -106,7 +106,7 @@ def count_hits(board):
     for row in board:
         # Include column guess in check
         for column in row:
-            # Check if selected column in row contains 'O'
+            # Check if selected column in row contains 'X'
             if column == 'X':
                 # If true, increment count by 1
                 count += 1
@@ -157,6 +157,8 @@ def play_game():
             print("That's a HIT!")
             # Update player board with X for hit.
             PLAYER_BOARD[row][column] = 'X'
+            count_hits(PLAYER_BOARD)
+            # print(count_hits(PLAYER_BOARD))
         # If user misses
         # Inside the main game loop
         else:
@@ -165,13 +167,13 @@ def play_game():
             PLAYER_BOARD[row][column] = '-'
             # Reduce number of turns by 1
             turns -= 1
-    if count_hits(PLAYER_BOARD) == 5:
-        # Print congratulations message
-        print("CONGRATULATIONS! You sunk all battleships.")
-        # End the game
-        return
+        if count_hits(PLAYER_BOARD) == 5:
+            # Print congratulations message
+            print("CONGRATULATIONS! You sunk all battleships.")
+            # End the game
+            return
     # Display remaining turns after each guess.
-    print(f"You have {turns} turns remaining.\n")
+        print(f"You have {turns} turns remaining.\n")
     # Check if all ships have been hit after each turn
     # If no more turns left, end game
     if turns == 0:
