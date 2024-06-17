@@ -181,14 +181,14 @@ def play_game():
 
 def restart_game():
     try:
-        restart = input("Enter y to play again or n to quit: ").lower()
-        if restart == "y":
+        restart = input("Enter y to play again or n to quit: ").upper()
+        if restart == "Y":
             return True
-        elif restart == "n":
+        elif restart == "N":
             return False
         raise ValueError
     except ValueError:
-        print("Please enter y or n")
+        print("Please enter Y or N")
         return True
 
 
