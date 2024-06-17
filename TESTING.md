@@ -42,15 +42,15 @@ ref: ioflood blog
 
 4: column info still printing as row info but looking for string. Fix: edit print message to user.
 
-5: place_cpu_battleships not working when run in terminal. Fix: line 45, missed second set of coordinates for column.
+5: place_cpu_battleships not working when run in terminal. Fix: line 41, missed second set of coordinates for column.
 
-6: Testing hit/miss with if, elif, else statement… not registering 8 as valid row… Fix: missing 8 in list of numbers in if statement - line 59.
+6: Testing hit/miss with if, elif, else statement… not registering 8 as valid row… Fix: missing 8 in list of numbers in if statement - line 56.
 
-7: Testing hit/miss with if, elif, else statement… G registering as H… Fix: line 12, y-axis converter not using 0 indexing, shots registering 1 to the right.
+7: Testing hit/miss with if, elif, else statement… G registering as H… Fix: line 7, y-axis converter not using 0 indexing, shots registering 1 to the right.
 
-8: Input invalid if user doesn’t input capital letter A-H… fix: (line 78) added .upper() to end of line of code.
+8: Input invalid if user doesn’t input capital letter A-H… fix: (line 75) added .upper() to end of line of code.
 
-9: After deploying and making changes, the win message doesn’t show and restart function isn’t called once user hits all 5 ships. Fix: Call count_hits function inside game loop. Line 159
+9: After deploying and making changes, the win message doesn’t show and restart function isn’t called once user hits all 5 ships. Fix: Call count_hits function inside game loop. Line 160
 
 ### Ongoing bugs
 
