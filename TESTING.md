@@ -8,7 +8,7 @@ The following document outlines the testing protocols undertaken to ensure that 
 
 Using the Code Institutes online Python Linter tool, to ensure that all code was PEP8 compliant. All code was validated upon first try, with the exception of line 7, where the code line was too long. This was fixed by continuing the code on a new line.
 
-![Line 7 validation]()
+![Line 7 validation](https://github.com/LcodeM/battle-ships/blob/main/documentation/validation_linter.png)
 
 This issue then proceded to show an error of trailing white space in the linter, but this should not effect the function or performance of the program. 
 
@@ -28,3 +28,30 @@ This issue then proceded to show an error of trailing white space in the linter,
 |All ships sunk         |User hits all 5 ships                                 |Congratulations message: Congrats, you sank all battleships! restart_game function displayed|Yes   |Pass         |                                                                  |
 |Restart game           |Game ends, user selects Y or N, game restarts or ends.|User prompted with option to restart game “Y or N” choice                                   |Yes   |Pass         |                                                                  |
 |Restart game fail      |User inputs invalid                                   |Error message: Please input a correct value                                                 |Yes   |Pass         |                                                                  |
+
+## Bugs
+
+### Solved Bugs
+
+1: converting code from Knowledge Mavens to simpler code for printing rows with “|” as spacing. Used Phind to troubleshoot for more modern code, used concatenation with print(f” …) 
+
+2: Random integer import not working. Fixed: import and from wrong way round, now using: from random import randint 
+ref: ioflood blog
+
+3: choose column/row function not working… Fix: Phind.com to troubleshoot, suggested using while loop for try:except function and create new function to run both inputs. 
+
+4: column info still printing as row info but looking for string. Fix: edit print message to user.
+
+5: place_cpu_battleships not working when run in terminal. Fix: line 45, missed second set of coordinates for column.
+
+6: Testing hit/miss with if, elif, else statement… not registering 8 as valid row… Fix: missing 8 in list of numbers in if statement - line 59.
+
+7: Testing hit/miss with if, elif, else statement… G registering as H… Fix: line 12, y-axis converter not using 0 indexing, shots registering 1 to the right.
+
+8: Input invalid if user doesn’t input capital letter A-H… fix: (line 78) added .upper() to end of line of code.
+
+9: After deploying and making changes, the win message doesn’t show and restart function isn’t called once user hits all 5 ships. Fix: Call count_hits function inside game loop. Line 159
+
+### Ongoing bugs
+
+1: When selecting the same coordinates of a hit battleship, current message still shows "hit". This doesn't cause any problems, as the game does not register an additional hit or miss, nor does it decrement a turn. In the future with more time, fixing this to prompt the same 'already guessed' message would be more suitable. 

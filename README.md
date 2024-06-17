@@ -161,7 +161,34 @@ In order to successfully deploy to Render, user can follow the below steps:
 
 ## Testing
 
-See [TESTING.md]().
+See [TESTING.md](https://github.com/LcodeM/battle-ships/blob/main/TESTING.md).
 
 ## Credits
 
+- [Kaggle](https://www.kaggle.com/discussions/general/273188): Used to set text style in python (bright green)
+
+[Knowledge Mavens Youtube](https://www.youtube.com/watch?v=tF1WRCrd_HQ&ab_channel=KnowledgeMavens):
+ Used as inspiration for creating classic battleships game
+Original code: 
+```py
+For row in board:
+	print(“%d|%s|” % (row_number, “|”.join(row)))
+```
+Simplified using [Phind.com](https://www.phind.com/search?home=true):
+```py
+For row in board:
+	print(f”{row_number}|{‘|’.join(row)}|”)
+```
+
+[Phind.com](https://www.phind.com/search?home=true): Troubleshooting and explaining code snippet functionality without offering direct solutions.
+
+[ioflood.com blog](https://ioflood.com/blog/randint-python/#:~:text=In%20this%20example%2C%20import%20random,number%20%2C%20which%20is%20printed%20out):
+Support for importing ranint from random
+
+[The Hello World Program](https://thehelloworldprogram.com/python/python-string-methods/#:~:text=upper()%20method%20on%20a,thereof%20one%20must%20be%20silent): For .upper() function line 78.
+
+[Convert CSV to Markup](https://www.convertcsv.com/csv-to-markdown.htm) Used to convert CSV of manual testing to markup table.
+
+[docs.Render](https://docs.render.com/node-version) Setting Node for deployment
+
+[Iuliia Konovalova - Mentor](https://github.com/IuliiaKonovalova/madlib_with_python/blob/main/README.md) Support with deployment instrucions to Render.com
