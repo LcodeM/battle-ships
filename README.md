@@ -95,6 +95,11 @@ If I had more time, some future features that would be a good addition to the ga
 - Add formatting of 'X' marker for hits as red.
 - Add functionality to to quit the game during play.
 
+## Flowchart
+
+![Flowchart]()
+The flowchart represents the logic of the application, and the steps taken in each instance when an input is prompted and/or made.
+
 ## Technologies
 
 ### Languages
