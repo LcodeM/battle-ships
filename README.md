@@ -133,27 +133,31 @@ In order to successfully deploy to Render, user can follow the below steps:
 - Step 1: Create a new account on [Render](https://render.com/) if you don't already have one.
 
 - Step 2: Select New at the top of the page, and select Web Service
-![Select web service]()
+![Select web service](https://github.com/LcodeM/battle-ships/blob/main/documentation/create_web_service.png)
 
 - Step 3: Select build from Github
-![Deploy from github]()
+![Deploy from github](https://github.com/LcodeM/battle-ships/blob/main/documentation/deploy_from_github_repo.png)
 
 - Step 4: Connect your Github repository
-![Repo select]()
+![Repo select](https://github.com/LcodeM/battle-ships/blob/main/documentation/connect_repo.png)
 
 - Step 5: Choose a name, region and branch for your project
-![Name and branch]()
+![Name and branch](https://github.com/LcodeM/battle-ships/blob/main/documentation/select_name_region_branch.png)
 
 - Step 6: Select free plan
-![Free plan]()
+![Free plan](https://github.com/LcodeM/battle-ships/blob/main/documentation/select_free_plan.png)
 
 - Step 7: Set Environment Variable to PORT 8000
-![Environment variable]()
+![Environment variable](https://github.com/LcodeM/battle-ships/blob/main/documentation/environment_variables.png)
 
 - Step  8: Enter secret/ignored files for privacy of data, if required.
-![Hidden files]()
+![Hidden files](https://github.com/LcodeM/battle-ships/blob/main/documentation/secret_files.png)
 
+- Step 9: Build web service, then go to settings on the left hand side. Add build command ```pip install - r requirements && npm install```
 
+- Step 10: Add start command ```node index.js```
+
+- Step 11: Save changes and wait for deploy completion.
 
 ## Testing
 
