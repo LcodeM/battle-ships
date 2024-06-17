@@ -163,9 +163,9 @@ In order to successfully deploy to Render, user can follow the below steps:
 ### Create a local clone
 
 To create a local copy of this repository:
-- First ensure you have Python installed on your computer. Enter "install python3" into your terminal.
-- Secondly, ensure you also install other python packages. Enter "get-pip.py" into your terminal.
-- Copy and paste https://github.com/LcodeM/battle-ships.git into your IDE workspace, or use "git clone https://github.com/LcodeM/battle-ships.git" in your terminal.
+- First ensure you have Python installed on your computer. Enter ```install python3``` into your terminal.
+- Secondly, ensure you also install other python packages. Enter ```get-pip.py``` into your terminal.
+- Copy and paste https://github.com/LcodeM/battle-ships.git into your IDE workspace, or use ```git clone https://github.com/LcodeM/battle-ships.git ``` in your terminal.
 
 ## Testing
 
