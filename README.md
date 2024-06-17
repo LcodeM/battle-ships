@@ -79,7 +79,7 @@ Upon entering an incorrect value to the input for row or column, the user is giv
 ![Game over](https://github.com/LcodeM/battle-ships/blob/main/documentation/game_over_message.png)
 If the user runs out of turns, the game is over and game over message printed. 
 
-![Win]()
+![Win](https://github.com/LcodeM/battle-ships/blob/main/documentation/congratulations_message.png)
 If the user hits all ships, congratulations message is shown.
 
 In both instances, the restart_game function will then prompt the user to play again or quit.
