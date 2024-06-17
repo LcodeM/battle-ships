@@ -4,7 +4,8 @@ from random import randint
 # Convert letters to numbers for user input using dictionary:
 # (0, 0) input would be A1 on board axis
 # Ref CI LMS dictionary comprehensions
-y_axis_converter = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
+y_axis_converter = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 
+                    'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
 
 def generate_board(board):
