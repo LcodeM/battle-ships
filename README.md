@@ -126,7 +126,14 @@ The list of technologies used for completion of the site are as follows:
 
 ### Deploying to Render
 
+Render was chosen over Heroku, as Heroku no longer offers a free plan.
 
+In order to successfully deploy to Render, user can follow the below steps:
+
+- Step 1: Create a new account on [Render](https://render.com/) if you don't already have one.
+
+- Step 2: Select New at the top of the page, and select Web Service
+![Select web service]()
 
 ## Testing
 
