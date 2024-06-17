@@ -80,7 +80,7 @@ Upon entering an incorrect value to the input for row or column, the user is giv
 If the user runs out of turns, the game is over and game over message printed. 
 
 ![Win]()
-If the user hits all ships, win message is shown.
+If the user hits all ships, congratulations message is shown.
 
 In both instances, the restart_game function will then prompt the user to play again or quit.
 
