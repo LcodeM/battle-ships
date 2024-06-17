@@ -135,6 +135,26 @@ In order to successfully deploy to Render, user can follow the below steps:
 - Step 2: Select New at the top of the page, and select Web Service
 ![Select web service]()
 
+- Step 3: Select build from Github
+![Deploy from github]()
+
+- Step 4: Connect your Github repository
+![Repo select]()
+
+- Step 5: Choose a name, region and branch for your project
+![Name and branch]()
+
+- Step 6: Select free plan
+![Free plan]()
+
+- Step 7: Set Environment Variable to PORT 8000
+![Environment variable]()
+
+- Step  8: Enter secret/ignored files for privacy of data, if required.
+![Hidden files]()
+
+
+
 ## Testing
 
 See [TESTING.md]().
